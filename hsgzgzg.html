@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Send Location</title>
+</head>
+<body>
+  <script>
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var latitude = position.coords.latitude;
+      var longitude = position.coords.longitude;
+      var link = "https://wa.me/989123468723?text=My%20location%20is:%20https://www.google.com/maps?q=" + latitude + "," + longitude;
+      window.location.href = link;
+    }, function(error) {
+      alert("Location access denied.");
+    });
+  </script>
+  <h2>در حال دریافت موقعیت شما...</h2>
+</body>
+</html>
